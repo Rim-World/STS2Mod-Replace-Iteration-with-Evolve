@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "Evolve",
+  "RE_EVOLVE_POWER.description": "Whenever you draw a Status card, draw more cards.",
+  "RE_EVOLVE_POWER.smartDescription": "Whenever you draw a Status card, draw [blue]{Amount}[/blue] {Amount:plural:card|cards}."
+}

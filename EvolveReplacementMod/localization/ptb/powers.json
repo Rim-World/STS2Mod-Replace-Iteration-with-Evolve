@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "Evoluir",
+  "RE_EVOLVE_POWER.description": "Sempre que você comprar uma carta de Condição, compre mais cartas.",
+  "RE_EVOLVE_POWER.smartDescription": "Sempre que você comprar uma carta de Condição, compre [blue]{Amount}[/blue] {Amount:plural:carta adicional|cartas adicionais}."
+}

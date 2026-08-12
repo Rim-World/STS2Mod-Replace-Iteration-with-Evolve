@@ -1,0 +1,4 @@
+{
+  "RE_EVOLVE.title": "Évolution",
+  "RE_EVOLVE.description": "Quand vous piochez une carte Statut, piochez {IterationPower:diff()} {IterationPower:plural:carte|cartes}."
+}

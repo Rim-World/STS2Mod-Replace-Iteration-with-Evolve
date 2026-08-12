@@ -1,0 +1,4 @@
+{
+  "RE_EVOLVE.title": "Эволюция",
+  "RE_EVOLVE.description": "Вы добираете {IterationPower:diff()} {IterationPower:plural(ru):карту|карты|карт}, когда добираете Статус."
+}

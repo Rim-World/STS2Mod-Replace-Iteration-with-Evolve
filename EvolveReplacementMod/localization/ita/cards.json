@@ -1,0 +1,4 @@
+{
+  "RE_EVOLVE.title": "Evoluzione",
+  "RE_EVOLVE.description": "Quando peschi uno Stato, peschi {IterationPower:diff()} {IterationPower:plural:carta|carte}."
+}

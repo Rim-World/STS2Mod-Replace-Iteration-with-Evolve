@@ -1,0 +1,4 @@
+{
+  "RE_EVOLVE.title": "進化",
+  "RE_EVOLVE.description": "每當抽到狀態牌時，抽 {IterationPower:diff()} 張牌。"
+}

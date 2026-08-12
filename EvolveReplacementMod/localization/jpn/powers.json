@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "進化",
+  "RE_EVOLVE_POWER.description": "状態異常カードを引くたび、さらにカードを引く。",
+  "RE_EVOLVE_POWER.smartDescription": "状態異常カードを引くたび、カードを[blue]{Amount}[/blue]枚引く。"
+}

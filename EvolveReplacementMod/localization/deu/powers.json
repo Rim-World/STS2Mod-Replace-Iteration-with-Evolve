@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "Entwickeln",
+  "RE_EVOLVE_POWER.description": "Immer wenn du einen Status ziehst, ziehe mehr Karten.",
+  "RE_EVOLVE_POWER.smartDescription": "Immer wenn du einen Status ziehst, ziehe [blue]{Amount}[/blue] {Amount:plural:Karte|Karten} mehr."
+}

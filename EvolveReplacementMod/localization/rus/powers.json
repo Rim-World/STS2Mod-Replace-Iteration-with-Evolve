@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "Эволюция",
+  "RE_EVOLVE_POWER.description": "Вы добираете карты, когда добираете Статус.",
+  "RE_EVOLVE_POWER.smartDescription": "Вы добираете [blue]{Amount}[/blue] {Amount:plural(ru):карту|карты|карт}, когда добираете Статус."
+}

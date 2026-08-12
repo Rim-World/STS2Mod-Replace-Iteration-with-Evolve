@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "Evoluzione",
+  "RE_EVOLVE_POWER.description": "Ogni volta che peschi uno Stato, peschi altre carte.",
+  "RE_EVOLVE_POWER.smartDescription": "Ogni volta che peschi uno Stato, peschi [blue]{Amount}[/blue] {Amount:plural:carta|carte}."
+}

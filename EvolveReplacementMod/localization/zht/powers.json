@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "進化",
+  "RE_EVOLVE_POWER.description": "每當你抽到狀態牌時，抽更多牌。",
+  "RE_EVOLVE_POWER.smartDescription": "每當你抽到狀態牌時，抽 [blue]{Amount}[/blue] 張牌。"
+}

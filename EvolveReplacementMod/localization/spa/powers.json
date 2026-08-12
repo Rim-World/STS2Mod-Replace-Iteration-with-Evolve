@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "Evolucionar",
+  "RE_EVOLVE_POWER.description": "Cada vez que robes una carta de Estado, roba más cartas.",
+  "RE_EVOLVE_POWER.smartDescription": "Cada vez que robes una carta de Estado, roba [blue]{Amount}[/blue] {Amount:plural:carta|cartas}."
+}

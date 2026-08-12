@@ -1,0 +1,4 @@
+{
+  "RE_EVOLVE.title": "Evrimleşme",
+  "RE_EVOLVE.description": "Ne zaman bir Durum kartı çekersen {IterationPower:diff()} {IterationPower:plural:kart|kart} çek."
+}

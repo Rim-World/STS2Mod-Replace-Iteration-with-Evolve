@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "Évolution",
+  "RE_EVOLVE_POWER.description": "Chaque fois que vous piochez une carte Statut, vous piochez plus de cartes.",
+  "RE_EVOLVE_POWER.smartDescription": "Chaque fois que vous piochez une carte Statut, piochez [blue]{Amount}[/blue] {Amount:plural:carte|cartes}."
+}

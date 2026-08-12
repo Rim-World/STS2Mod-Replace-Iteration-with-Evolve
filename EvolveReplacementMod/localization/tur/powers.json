@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "Evrimleşme",
+  "RE_EVOLVE_POWER.description": "Ne zaman bir Durum kartı çekersen fazladan kart çekersin.",
+  "RE_EVOLVE_POWER.smartDescription": "Ne zaman bir Durum kartı çekersen fazladan [blue]{Amount}[/blue] {Amount:plural:kart|kart} çekersin."
+}

@@ -1,0 +1,4 @@
+{
+  "RE_EVOLVE.title": "Evoluir",
+  "RE_EVOLVE.description": "Sempre que comprar uma carta de Condição, compre {IterationPower:diff()} {IterationPower:plural:carta|cartas}."
+}

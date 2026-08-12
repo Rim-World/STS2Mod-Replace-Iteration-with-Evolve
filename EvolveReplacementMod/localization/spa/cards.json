@@ -1,0 +1,4 @@
+{
+  "RE_EVOLVE.title": "Evolucionar",
+  "RE_EVOLVE.description": "Cada vez que robes una carta de Estado, roba {IterationPower:diff()} {IterationPower:plural:carta|cartas}."
+}

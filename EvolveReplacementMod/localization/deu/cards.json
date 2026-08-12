@@ -1,0 +1,4 @@
+{
+  "RE_EVOLVE.title": "Entwickeln",
+  "RE_EVOLVE.description": "Immer wenn du einen Status ziehst, ziehe {IterationPower:diff()} {IterationPower:plural:Karte|Karten}."
+}

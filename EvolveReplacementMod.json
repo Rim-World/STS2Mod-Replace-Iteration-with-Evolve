@@ -1,0 +1,12 @@
+{
+  "id": "EvolveReplacementMod",
+  "name": "进化 (Evolve)",
+  "author": "EvolveReplacementMod",
+  "description": "将故障机器人的“迭代”（Iteration）整卡替换为杀戮尖塔1铁甲战士的“进化”（Evolve）：每次抽到状态牌时抽 1 张牌（升级 2 张），不再限定每回合一次；STS1 卡图/Buff 图标与 15 语言文本。",
+  "version": "0.1.0",
+  "has_pck": true,
+  "has_dll": true,
+  "min_game_version": "0.107.1",
+  "dependencies": [],
+  "affects_gameplay": true
+}

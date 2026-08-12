@@ -1,0 +1,5 @@
+{
+  "RE_EVOLVE_POWER.title": "Ewolucja",
+  "RE_EVOLVE_POWER.description": "Kiedykolwiek dobierzesz kartę Stanu, dobierz więcej kart.",
+  "RE_EVOLVE_POWER.smartDescription": "Kiedykolwiek dobierzesz kartę Stanu, dobierz [blue]{Amount}[/blue] {Amount:plural:kartę|karty|kart}."
+}

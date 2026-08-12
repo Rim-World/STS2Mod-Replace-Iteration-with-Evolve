@@ -1,0 +1,4 @@
+{
+  "RE_EVOLVE.title": "Evolve",
+  "RE_EVOLVE.description": "Whenever you draw a Status card, draw {IterationPower:diff()} {IterationPower:plural:card|cards}."
+}

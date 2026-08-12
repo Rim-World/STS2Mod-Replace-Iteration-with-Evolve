@@ -1,0 +1,4 @@
+{
+  "RE_EVOLVE.title": "Ewolucja",
+  "RE_EVOLVE.description": "Kiedykolwiek dobierzesz kartę Stanu, dobierz {IterationPower:diff()} {IterationPower:plural:kartę|karty|kart}."
+}
