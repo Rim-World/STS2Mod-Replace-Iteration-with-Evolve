@@ -1,97 +1,102 @@
-# 用进化替换迭代
+# STS2Mod-进化
 
-## ① 环境
+> 把《杀戮尖塔 2》故障机器人的「迭代」整卡替换为《杀戮尖塔 1》铁甲战士的「进化」。
+> Replaces The Defect's "Iteration" card in Slay the Spire 2 with the Ironclad's "Evolve" card from Slay the Spire 1.
 
-本 mod 不依赖任何基础 mod。
+- 当前版本：**1.0**（mod 清单 `version=1.0`）
+- 游戏版本：default 0.107.1 / public beta 0.110.x（清单 `min_game_version=0.107.1`）
+- 仓库：<https://github.com/Rim-World/STS2Mod-Replace-Iteration-with-Evolve>
+- 许可：MIT（`LICENSE`，Copyright (c) 2026 戏剧性机器）
 
-本 mod 支持 public beta 110 版本与 default 107 版本。
+## 功能
 
-## ② 15 种语言支持
+- **触发条件**：原版「迭代」每回合只在**第一次**抽到状态牌时触发；本 mod 改为**每次**抽到状态牌都触发（塔1 语义）。
+- **数值**：原版基础抽 2 张、升级抽 3 张；本 mod 改为塔1 的**基础 1 张、升级 2 张**。
+- **整卡呈现**：卡名改「进化」，卡面文本、卡图（1000×760 与 250×190 两档）、Buff 名称、Buff 描述、
+  Buff 智能描述、Buff 图标（64×64 与 256×256 两档）全部换为塔1 样式。
+- **15 种语言**：deu / eng / esp / fra / ita / jpn / kor / pol / ptb / rus / spa / tha / tur / zhs / zht，
+  文本取自塔1 原文（详见 `3.DOCS/003-T`）。
+- **不改卡池**：直接在原卡模型上修改，不新增卡牌、不禁用旧卡；mod 开启时历史记录里的「迭代」一并呈现为「进化」，
+  关闭后恢复原状。
 
-亚洲：简体中文 / 繁体中文 / 日语 / 韩语 / 泰语 / 土耳其语
+费用、类型（Power）、稀有度（Uncommon）、目标（自身）与塔1 进化完全一致，未作修改。
 
-欧洲与美洲：英语 / 葡萄牙语（巴西）/ 西班牙语（拉美）/ 西班牙语 / 法语 / 俄语 / 德语 / 意大利语 / 波兰语
+## 兼容性
 
-文本标签按首字母顺序，依次为 deu、eng、esp、fra、ita、jpn、kor、pol、ptb、rus、spa、tha、tur、zhs、zht。
+- **不依赖任何基础 mod**：不依赖 BaseLib / RitsuLib，清单 `dependencies: []`。
+- **单 DLL 通吃 107 / 110**：两版 `Iteration` / `IterationPower` 反编译逐行一致，依赖 API 签名一致
+  （取证见 `3.DOCS/001-T`）。
+- **低冲突**：无新增卡牌、无自定义 Power 类、无全局状态；本地化键使用模组专属前缀 `RE_EVOLVE.*` / `RE_EVOLVE_POWER.*`。
+- **不保证**与盗版、修改版、移动版、老旧版本或冷门次级 mod 的兼容性。
+- 已知边界：`IterationPower` 目前只被「迭代」使用；若未来其他卡牌复用该 Power，本 mod 也会同样按「进化」语义触发。
 
-文本均来自《杀戮尖塔 1》，仅作简单格式调整，可能有少量错误。
+## 安装
 
-## ③ 效果
+1. 构建产物为 `EvolveReplacementMod.dll` + `EvolveReplacementMod.pck` + `EvolveReplacementMod.json`
+   （`EvolveReplacementMod.pdb` 为可选调试符号）。
+2. 整个文件夹放到 `<游戏目录>/mods/EvolveReplacementMod/`（**放文件夹本身，不要只放内部文件**）。
+3. 启动游戏。日志出现下面两行即表示补丁挂载成功：
 
-将游戏中的“迭代”卡牌的效果、卡名、卡面图片、卡面文本、buff 图标、buff 动态文本更换为与《杀戮尖塔 1》中卡牌“进化”相同。
+   ```
+   EvolveReplacementMod: loading...
+   EvolveReplacementMod: Harmony patches applied (Iteration -> Evolve)
+   ```
 
-本 mod 采用直接在“迭代”原卡牌上进行修改的方法生效，并非生成新卡牌 + 禁用旧卡牌。
+4. 从 110 降回 107 时请先结束或放弃当前 run，否则游戏会判定存档版本过新并改名 `.FUT.corrupt`
+   （原因与对策见 `3.DOCS/002-T`）。
 
-本 mod 影响存档：在 mod 开启时，所有历史记录中的“迭代”卡牌都会被更换为“进化”卡牌；关闭 mod 后会恢复原状。
+## 构建
 
-## ④ 影响（基于本人游戏理解）
+```powershell
+cd 9.SRC\EvolveReplacementMod
+pwsh .\build.ps1
+```
 
-在原版游戏所有难度下，大多数对局中，对于故障机器人职业，“进化”与“迭代”强度基本相当、各有优劣；
+`build.ps1` 依次执行：`dotnet build EvolveReplacementMod.csproj -c Debug` → Godot 4.5.1 mono
+headless `--import` → `--export-pack "Windows Desktop"` 生成 pck → 拷贝 `dll` / `pdb` / `json`
+到游戏 `mods/EvolveReplacementMod/`。
 
-通常来说，在短线战斗中，迭代更强；在长线战斗中（特别是面对沙漏boss时），进化更强；
+依赖：.NET SDK 9.0、Godot 4.5.1 mono（`Godot.NET.Sdk/4.5.1`、`net9.0`）、游戏自带
+`data_sts2_windows_x86_64/sts2.dll` 与 `0Harmony.dll`。本机路径写在 `EvolveReplacementMod.csproj` 与
+`build.ps1` 顶部，换机器需先改这两处。
 
-当你的卡组较小、状态牌占比较高时，进化显著更强；当你的卡组较大、状态牌占比较低时，迭代更强一些。
+## 目录结构
 
-对于其它职业，强弱对比的情况与故障机器人大体相同。
+```
+1.ADR/          决策记录（ADR.md 索引）
+2.PLANS/        施工计划（PLANS.md 索引）
+3.DOCS/         知识与译文（DOCS.md 索引）
+4.SDD/          软件设计（SDD.md 索引）
+5.ChangeLog/    版本日志分片（ChangeLog.md 索引）
+9.SRC/          源码（Godot + C# 工程）
+10.OUTPUT/      构建产物与发布包（output.md 索引，不入库）
+PRIVACY/        机密信息（PRIVACY.md 索引，不入库）
+TMP/            临时与过程文件（TMP.md 索引，不入库）
+TOOLS/          工具与自写脚本（TOOLS.md 索引）
+description/    创意工坊文案（中/英）
+pics/           封面与素材图
+```
 
-## ⑤ 兼容性与 Bug
+## 文档索引
 
-本 mod 采用最小依赖的方式写成，正常来说与大多数 mod 兼容，且不易随着版本变化而失效。
+- 决策：[1.ADR/001-迭代替换为进化的整卡替换.md](1.ADR/001-迭代替换为进化的整卡替换.md)
+- 计划：[2.PLANS/001-G-迭代替换为进化施工计划.md](2.PLANS/001-G-迭代替换为进化施工计划.md)
+- 取证笔记：[3.DOCS/001-T-进化替换工程取证笔记.md](3.DOCS/001-T-进化替换工程取证笔记.md)
+- 存档兼容：[3.DOCS/002-T-版本切换导致存档损坏根因.md](3.DOCS/002-T-版本切换导致存档损坏根因.md)
+- 15 语言译文：[3.DOCS/003-T-进化15语言译文与转换规则.md](3.DOCS/003-T-进化15语言译文与转换规则.md)
+- 设计：[4.SDD/001-总体设计.md](4.SDD/001-总体设计.md)
+- 版本日志：[5.ChangeLog/001-1.0-2026-08-15.md](5.ChangeLog/001-1.0-2026-08-15.md)、[CHANGELOG.md](CHANGELOG.md)
 
-但本 mod 不保证与盗版、修改版、移动版、老旧版本或者冷门 mod、次级 mod 的兼容性。
-
-## ⑥ 鸣谢
+## 致谢
 
 本 mod 使用 Codex（桌面版）+ DeepSeek V4 Flash（0731 正式版）完成，感谢梁圣。
 
 感谢《杀戮尖塔 2》制作组为了方便玩家制作 mod 所做的努力。
 
-感谢 Baselib 制作者提供的文档，感谢 GitHub 项目 @jiegec/STS2RevertAnthony 提供的源码参考。
+感谢 Baselib 制作者提供的文档，感谢 GitHub 项目 [jiegec/STS2RevertAnthony](https://github.com/jiegec/STS2RevertAnthony)
+提供的源码参考，以及同系列替换 mod（幻杀 / 死割 / 尸爆术 / 回收）提供的工程骨架。
 
-# Replace Iteration with Evolve
+## 反馈
 
-## 1\. Environment
-
-This mod does not depend on any base mod.
-
-This mod supports the Public Beta 110 version and the Default 107 version.
-
-## 2\. 15 Languages Supported
-
-Asia: Simplified Chinese / Traditional Chinese / Japanese / Korean / Thai / Turkish
-
-Europe \& the Americas: English / Portuguese (Brazil) / Spanish (Latin America) / Spanish / French / Russian / German / Italian / Polish
-
-The text tags, in alphabetical order, are: deu, eng, esp, fra, ita, jpn, kor, pol, ptb, rus, spa, tha, tur, zhs, zht.
-
-All texts are taken from Slay the Spire 1, with only simple formatting adjustments; there may be minor errors.
-
-## 3\. Effects
-
-Replaces the effect, card name, card art, card text, buff icon, and buff dynamic text of the game's "Iteration" card with those of the "Evolve" card from Slay the Spire 1.
-
-This mod works by modifying the original "Iteration" card directly, rather than creating a new card and disabling the old one.
-
-This mod affects save files: while the mod is enabled, all "Iteration" cards in historical records will be replaced with "Evolve" cards; disabling the mod restores the original state.
-
-## 4\. Impact (Based on My Understanding of the Game)
-
-In the vanilla game at all difficulty levels, in most runs, for The Defect, Evolve and Iteration are roughly equal in strength, each with its own advantages: in short fights, Iteration is stronger; in long fights (especially when facing the Aeonglass boss), Evolve is stronger.
-
-Evolve is significantly stronger when your deck is smaller and contains a higher proportion of Status cards; Iteration is slightly stronger when your deck is larger and contains a lower proportion of Status cards.
-
-For other characters, the strength comparison is roughly the same as for The Defect.
-
-## 5\. Compatibility \& Bugs
-
-This mod is written with minimal dependencies, so under normal circumstances it is compatible with most mods and unlikely to break as the game version changes.
-
-However, compatibility is not guaranteed with pirated copies, modified versions, mobile versions, outdated versions, niche mods, or secondary mods.
-
-## 6\. Credits
-
-This mod was made with Codex (desktop) + DeepSeek V4 Flash (0731 GA). Thanks to Saint Liang.
-
-Thanks to the Slay the Spire 2 team for their efforts to make modding easier for players.
-
-Thanks to the Baselib developers for their documentation, and to the GitHub project @jiegec/STS2RevertAnthony for the source code reference.
+开源地址：<https://github.com/Rim-World/STS2Mod-Replace-Iteration-with-Evolve>，
+欢迎在创意工坊评论区或 GitHub Issues 提出意见与反馈。
