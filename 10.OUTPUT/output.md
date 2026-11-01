@@ -7,8 +7,11 @@
 
 | 时间 | 名称 | 版本号 | 大小 | 说明 |
 |---|---|---|---|---|
-| 2026-11-01 | `02-发布包/EvolveReplacementMod.v1.0.zip` | 1.0 | 见下 | GitHub Release `v1.0` 附件一：从游戏 `mods/EvolveReplacementMod/` 打包的安装包（已排除 `.sts2-workshop-uploader` 等以 `.` 开头的项） |
-| 2026-11-01 | `02-发布包/EvolveReplacementModSourceCode.zip` | 1.0 | 见下 | GitHub Release `v1.0` 附件二：从 `9.SRC/EvolveReplacementMod/` 打包的源码包（排除 `.godot/`、`bin/`、`obj/`、`*.dll`、`*.pck`、`*.pdb`） |
+| 2026-11-01 | `02-发布包/EvolveReplacementMod.v1.0.zip` | 1.0 | 1 128 002 B（4 个文件） | GitHub Release `v1.0` 附件一：从游戏 `mods/EvolveReplacementMod/` 打包的安装包（已排除 `.sts2-workshop-uploader` 等以 `.` 开头的项） |
+| 2026-11-01 | `02-发布包/EvolveReplacementModSourceCode.zip` | 1.0 | 1 160 349 B（74 个文件） | GitHub Release `v1.0` 附件二：从 `9.SRC/EvolveReplacementMod/` 打包的源码包（排除 `.godot/`、`bin/`、`obj/`、`*.dll`、`*.pck`、`*.pdb`） |
+
+发布页：<https://github.com/Rim-World/STS2Mod-Replace-Iteration-with-Evolve/releases/tag/v1.0>
+（该仓库此前没有任何 Release，v1.0 为第一个；标签指向提交 `04c62cb`。）
 
 ## 产物构成（安装包内容）
 
