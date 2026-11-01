@@ -45,5 +45,5 @@
 ### 变更
 
 - 仓库整理：源码移入 `9.SRC/EvolveReplacementMod/`，文档按 AGENTS.md 十目录规范重新编号，
-  新建 `4.SDD`、`5.ChangeLog` 与各目录索引。未改动任何代码文件。（提交待回填）
+  新建 `4.SDD`、`5.ChangeLog` 与各目录索引。未改动任何代码文件。（提交 `3eb62ec`）
 - 新建 GitHub Release `v1.0`，资产为安装包与源码包。
