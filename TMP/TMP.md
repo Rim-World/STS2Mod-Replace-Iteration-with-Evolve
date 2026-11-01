@@ -33,3 +33,8 @@ Godot 编辑器的导入缓存与 `dotnet build` 输出（`mono/temp/bin|obj/`�
 `01-旧Git仓库/` 与 `03-运行日志/` 当前为空目录，可直接删除；`02-缓存与临时/` 内只有 Release 正文草稿
 `release-notes-v1.0.md`，正文已发布到 GitHub Release，确认无需留档后可删除。如需清除构建缓存，
 在 `9.SRC/EvolveReplacementMod/` 下删除 `.godot/` 即可（下次构建自动重建）。
+
+## 2026-11-01 清理记录
+
+- `TMP/01-旧Git仓库/` 与 `TMP/02-缓存与临时/` 的内容已全部移入 Windows 回收站。
+- 清理依据：远端仓库已完整保留历史，构建缓存可再生；需要回滚时从远端 `git log` 或 `10.OUTPUT/` 取回。
